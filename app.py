@@ -8,7 +8,7 @@ import os
 import streamlit.components.v1 as stc
 
 
-openai.api_key=st.secrets["pass"]
+openai.api_key = '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'
 
 
 def main():
@@ -186,9 +186,117 @@ def main():
         choice_explode = st.radio("Have you felt that your mind was ready to explode?", tuple(explode.keys()))
         result_explode = get_value(choice_explode, explode)
         
-        angry = {"No": 0, "Yes": 1}
-        choice_angry = st.radio("Have you felt angry?", tuple(angry.keys()))
-        result_angry = get_value(choice_angry, angry)
+        grouchy = {"No": 0, "Yes": 1}
+        choice_grouchy = st.radio("Have you felt grouchy?", tuple(grouchy.keys()))
+        result_grouchy = get_value(choice_grouchy, grouchy)
+
+        annoyed = {"No": 0, "Yes": 1}
+        choice_annoyed = st.radio("Have you felt annoyed?", tuple(annoyed.keys()))
+        result_annoyed = get_value(choice_annoyed, annoyed)
+
+
+        #Anxiety
+        st.subheader("In the past seven days...")
+
+        fearful = {"No": 0, "Yes": 1}
+        choice_fearful = st.radio("Have you felt fearful?", tuple(fearful.keys()))
+        result_fearful = get_value(choice_fearful, fearful)
+        
+        anxious = {"No": 0, "Yes": 1}
+        choice_anxious = st.radio("Have you felt anxious?", tuple(anxious.keys()))
+        result_anxious = get_value(choice_anxious, anxious)
+
+        worried = {"No": 0, "Yes": 1}
+        choice_worried = st.radio("Have you felt worried?", tuple(worried.keys()))
+        result_worried = get_value(choice_worried, worried)
+
+        focus = {"No": 0, "Yes": 1}
+        choice_focus = st.radio("Have you felt like you couldn't focus on anything else other than your anxiety?", tuple(focus.keys()))
+        result_focus = get_value(choice_focus, focus)
+
+        nervous = {"No": 0, "Yes": 1}
+        choice_nervous= st.radio("Have you felt nervous?", tuple(nervous.keys()))
+        result_nervous = get_value(choice_nervous, nervous)
+
+        uneasy = {"No": 0, "Yes": 1}
+        choice_uneasy = st.radio("Have you felt uneasy?", tuple(uneasy.keys()))
+        result_uneasy = get_value(choice_uneasy, uneasy)
+
+        tense = {"No": 0, "Yes": 1}
+        choice_tense= st.radio("Have you felt tensed?", tuple(tense.keys()))
+        result_tense = get_value(choice_tense, tense)
+
+        #Sleep Disorder
+        st.subheader("In the past seven days...")
+
+        restless = {"No": 0, "Yes": 1}
+        choice_restless = st.radio("Have you felt restless while sleeping?", tuple(restless.keys()))
+        result_restless = get_value(choice_restless, restless)
+
+        refreshing = {"No": 0, "Yes": 1}
+        choice_refreshing = st.radio("Have you felt refreshed after your sleep?", tuple(refreshing.keys()))
+        result_refreshing = get_value(choice_refreshing, refreshing)
+
+        satisfied = {"No": 0, "Yes": 1}
+        choice_satisfied = st.radio("Have you felt satisfied after your sleep?", tuple(satisfied.keys()))
+        result_satisfied = get_value(choice_satisfied, satisfied)
+
+        falling = {"No": 0, "Yes": 1}
+        choice_falling = st.radio("Have you felt difficulty falling asleep?", tuple(falling.keys()))
+        result_falling = get_value(choice_falling, falling)
+
+        enough = {"No": 0, "Yes": 1}
+        choice_enough= st.radio("Do you get enough sleep?", tuple(enough.keys()))
+        result_enough = get_value(choice_enough, enough)
+
+        #Substance dependence
+        st.subheader("In the past seven days...")
+
+        stimulants = {"No": 0, "Yes": 1}
+        choice_stimulants= st.radio("Have you used stimulants like Ritalin or Adderall?", tuple(stimulants.keys()))
+        result_stimulants = get_value(choice_stimulants, stimulants)
+
+        painkillers = {"No": 0, "Yes": 1}
+        choice_painkillers =  st.radio("Have you used painkillers like Vicodin?", tuple(painkillers.keys()))
+        result_painkillers = get_value(choice_painkillers, painkillers)
+
+        sedatives = {"No": 0, "Yes": 1}
+        choice_sedatives =  st.radio("Have you used sedatives or tranquilizers like sleeping pills or Valium?", tuple(sedatives.keys()))
+        result_sedatives = get_value(choice_sedatives, sedatives)
+
+        marijuana = {"No": 0, "Yes": 1}
+        choice_marijuana =  st.radio("Have you used marijuana?", tuple(marijuana.keys()))
+        result_marijuana = get_value(choice_marijuana, marijuana)
+
+        coke = {"No": 0, "Yes": 1}
+        choice_coke =  st.radio("Have you used coke/cocaine or crack?", tuple(coke.keys()))
+        result_coke = get_value(choice_coke, coke)
+
+        ecstasy = {"No": 0, "Yes": 1}
+        choice_ecstasy =  st.radio("Have you used club drugs like ecstasy?", tuple(ecstasy.keys()))
+        result_ecstasy = get_value(choice_ecstasy, ecstasy)
+
+        hallucinogens = {"No": 0, "Yes": 1}
+        choice_hallucinogens =  st.radio("Have you used hallucinogens like LSD or DMT?", tuple(hallucinogens.keys()))
+        result_hallucinogens = get_value(choice_hallucinogens, hallucinogens)
+
+        heroin = {"No": 0, "Yes": 1}
+        choice_heroin =  st.radio("Have you used heroin?", tuple(heroin.keys()))
+        result_heroin = get_value(choice_heroin, heroin)
+
+        inhalents = {"No": 0, "Yes": 1}
+        choice_inhalents =  st.radio("Have you used inhalents or solvents like glue/solution?", tuple(inhalents.keys()))
+        result_inhalents = get_value(choice_inhalents, inhalents)
+
+        meth = {"No": 0, "Yes": 1}
+        choice_meth=  st.radio("Have you used Methamphetamine like Speed?", tuple(meth.keys()))
+        result_meth = get_value(choice_meth, meth)
+
+
+        st.subheader("Prediction Tool")
+        if st.checkbox("Make Prediction"):
+            st.subheader("The prediction is: ")
+
 
 
 
